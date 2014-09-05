@@ -44,13 +44,16 @@ main, fieldset {
 fieldset *:not(legend):not(small):not(div) {
 	font-family: Century Gothic, Myriad Pro, Arial, Helvetica, sans-serif;
 	font-size: 1.5em;
-	letter-spacing: 0.1em;
+	word-spacing: 0.1em;
 	padding-top: .1em;
 	margin-top: .2em;
 }
 label {
 	width: 25%;
+	color: wheat;
 	min-width: 2.0em;
+	word-spacing: 0;
+	font-size: 0.9em;
 	float: left;
 	text-align: right;
 	clear: left;
@@ -69,9 +72,9 @@ input, select, textarea {
 	color: #FFF;
 	background: #222;
 }
-.gender *{
+.gender * {
 	float: left;
-	margin:0;
+	margin: 0;
 	padding: 0;
 }
 input[type="radio"] {
@@ -82,42 +85,58 @@ input[type="radio"] {
 textarea {
 	width: 80%;
 	height: 4.5em;
+	font-size: 0.9em;
 	float: none;
-}
-select, option {
-	text-align: center;
 }
 legend {
 	font-family: serif, sans-serif, 微软雅黑, 宋体;
 	text-align: left;
 	font-size: 1.1em;
+	color: #454745;
 }
 small {
-	font-size: 0.8em;
+	font-size: 0.8em !important;
+	color: #404040;
 }
-small a {
+small a, small a:visited {
 	font-size: 1.0em !important;
+	color: #373830;
 }
 button {
 	/* The submit button container */
 	text-align: center;
 	margin-top: .5em;
 	font-size: 2.5em;
-	border: 1px solid #f4f4f4;
-	cursor: pointer;
-	background: #d0ecfd;
+	border: 1px solid #444;
+	color: white;
+	background: #2b8bc7;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 }
-button:hover {
-	background-color: #dcf2ff;
-	border: 2px solid white;
+select:focus, input:focus, button:hover {
+	background-color: #d0ecfd;
+	border: 5px solid blue;
+	font-weight: bolder;
+	color: green;
 }
-input:hover, input:focus {
-	-moz-box-shadow: 0 0 8px lightblue;
-	-webkit-box-shadow: 0 0 8px lightblue;
-	box-shadow: 0 0 8px lightblue;
+input:hover, select:hover {
+	-moz-box-shadow: 0 0 8px blue;
+	-webkit-box-shadow: 0 0 8px blue;
+	box-shadow: 0 0 8px blue;
+}
+
+*::-moz-placeholder {
+	color:#444;
+}
+*::-webkit-input-placeholder {
+	color:#444;
+}
+*:-ms-input-placeholder {
+	color:#444;
+}
+select([value='']){
+	color: #444
 }
 .errorTip {
 	/* The error divs */
@@ -125,11 +144,38 @@ input:hover, input:focus {
 	color: white;
 	font-size: 10px;
 	height: 26px;
-	letter-spacing: 0.4px;
+	word-spacing: 0.4px;
 	margin-left: 20px;
 	padding: 5px 0 5px 10px;
 	position: absolute;
 	text-shadow: 1px 1px 0 #555555;
 	width: 200px;
 	right: -130px;
+}
+footer {
+	text-align: center;
+}
+footer ul {
+	list-style-type: none;
+	display: block;
+	color: #444;
+}
+footer a, footer a:visited {
+	color: #465c71;
+	/* #dde4ec; /* 文字颜色 */
+	text-decoration: none; /* 不显示超链接下划线 */
+}
+@media all and (min-width:800px) {
+	footer li {
+		display: inline;
+	}
+	
+	/* 页脚竖线 */
+	footer li:before {
+		margin-right: 0.5em;
+		content: '|';
+	}
+	footer li:first-child:before {
+		content: ' ';
+	}
 }

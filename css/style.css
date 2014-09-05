@@ -58,6 +58,11 @@ label {
 	text-align: right;
 	clear: left;
 }
+label:not([for="dept2"]):before{
+content: '*';
+font-size: 1em;
+color: #FF2222;
+}
 input, select, textarea, .gender {
 	/* The text boxes */
 	width: 60%;

@@ -41,16 +41,16 @@ main, fieldset {
 	-webkit-border-radius: 12px;
 	border-radius: 12px;
 }
-fieldset *:not(legend):not(small) {
+fieldset *:not(legend):not(small):not(div) {
 	font-family: Century Gothic, Myriad Pro, Arial, Helvetica, sans-serif;
-	font-size: 1.8em;
+	font-size: 1.5em;
 	letter-spacing: 0.1em;
 	padding-top: .1em;
 	margin-top: .2em;
 }
 label {
 	width: 25%;
-	min-width: 2.2em;
+	min-width: 2.0em;
 	float: left;
 	text-align: right;
 	clear: left;
@@ -71,13 +71,12 @@ input, select, textarea {
 }
 .gender *{
 	float: left;
-	font-size: 1em;
 	margin:0;
 	padding: 0;
 }
 input[type="radio"] {
 	width: 10%;
-	min-width: 1em;
+	min-width: 0.8em;
 	height: 1em;
 }
 textarea {

@@ -2,8 +2,9 @@
 <html lang="zh-CN">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=2.0,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script type="text/javascript" defer src="js/form.js"></script>
 	<title>南微软纳新表</title>
 </head>
 <body>
@@ -11,29 +12,34 @@
 		<h1>
 			2014年南开大学微软俱乐部纳新表
 		</h1>
-		<form>
+		<form action="http://nkumstcnew.sinaapp.com/new.php" method="post">
 			<fieldset>
-				<legend>个人信息</legend>
+				<legend>
+					个人信息
+					<small>
+						(不是南开大学的学生？请在备注中说明！)
+					</small>
+				</legend>
 				<div>
-					<label for="id">学号</label>
-					<input name="id"  placeholder="如1110664"  type="text" required="required" autofocus="autofocus"/>
+					<label>学号</label>
+					<input name="id"  placeholder="如1110664"  type="text" required autofocus="autofocus"/>
 				</div>
 				<div>
-					<label for="name">姓名</label>
-					<input name="name" placeholder="你的名字" required="required" type="text"/>
+					<label>姓名</label>
+					<input name="name" placeholder="你的名字" required type="text"/>
 				</div>
 				<div>
 					<label>性别</label>
 					<div class="gender">
-						<input type="radio" name="gender" value="F"/>
+						<input required='required' type="radio" name="gender" value="M"/>
 						<span>男生</span>
-						<input type="radio" name="gender" value="M"/>
+						<input type="radio" name="gender" value="F"/>
 						<span>女生</span>
 					</div>
 				</div>
 				<div>
 					<label>学院</label>
-					<select class="input" required="required" name="college">
+					<select class="input" required name="college">
 						<option value="计控" selected="selected">计算机与控制工程</option>
 						<option value="软件">软件学院</option>
 						<option value="电光">电信与光学工程</option>
@@ -61,8 +67,9 @@
 				</div>
 				<div>
 					<label>年级</label>
-					<select class="input" required="required" name="grade" id="grade">
-						<option value="大一" selected>大一</option>
+					<select class="input" required name="grade" id="grade">
+						<option selected disabled>选择年级</option>
+						<option value="大一">大一</option>
 						<option value="大二">大二</option>
 						<option value="大三">大三</option>
 						<option value="大四">大四</option>
@@ -75,14 +82,21 @@
 				</div>
 			</fieldset>
 			<fieldset>
-				<legend>联系方式</legend>
+				<legend>
+					联系方式
+					<small>
+						（近期内要换手机号？请在备注中说明。担心泄露个人信息？查看
+						<a href="privacystatement">隐私声明</a>
+						）
+					</small>
+				</legend>
 				<div>
-					<label for="phone">手机</label>
-					<input name="phone" placeholder="你的手机号" required="required" type="number"/>
+					<label>手机</label>
+					<input name="phone" placeholder="接收短信的手机" required type="number"/>
 				</div>
 				<div>
-					<label for="email">邮箱</label>
-					<input name="email" placeholder="最常用邮箱" required="required" type="email"/>
+					<label>邮箱</label>
+					<input name="email" placeholder="接收通知的邮箱" required type="email"/>
 				</div>
 			</fieldset>
 			<fieldset class="dept">
@@ -96,8 +110,8 @@
 				</legend>
 				<div>
 					<label for="dept1">第一意愿</label>
-					<select class="dept" name="dept1" id="dept1">
-					<option>最想去的部门</option>
+					<select class="dept" name="dept1" id="dept1" required>
+						<option selected disabled>最想去的部门</option>
 						<option value="技术部">技术部</option>
 						<option value="策宣部">策宣部</option>
 						<option value="运营部">运营部</option>
@@ -107,19 +121,54 @@
 				<div>
 					<label for="dept2">第二意愿</label>
 					<select class="dept" name="dept2" id="dept2">
-					<option>备选部门</option>
+						<option selected disabled>备选部门</option>
+						<option value="技术部">技术部</option>
 						<option value="策宣部">策宣部</option>
 						<option value="运营部">运营部</option>
-						<option value="技术部">技术部</option>
+
 					</select>
 				</div>
 			</fieldset>
 			<fieldset>
-				<legend>备注补充</legend>
-				<textarea name="info" id="info" placeholder="还有什么重要信息没有些的都可以放这里"></textarea>
+				<legend>
+					备注补充
+					<small>(不想写就不写啦！)</small>
+				</legend>
+				<textarea name="info" id="info" placeholder="相关或无关的内容都可以写在这里"></textarea>
 			</fieldset>
-			<button id="submit" type="submit" value="提交">确认</button>
+			<button id="submit" type="submit">确认提交</button>
 		</form>
 	</main>
+
+	<footer>
+		<ul>
+			<li>
+				版权所有&copy;2001-2014
+				<a href="http://nkumstc.cn">南微软</a>
+			</li>
+			<li>
+				由
+				<a>NewFuture</a>
+				和
+				<a>张志强</a>
+				创建
+			</li>
+			<li>
+				由
+				<a href="http://department.nkumstc.cn/technology.html">南微软技术部</a>
+				提供支持
+			</li>
+			<li>
+				访问
+				<a href="en/">
+					英语版(English Edition)
+				</a>
+			</li>
+			<li>
+				查看
+				<a href="privacystatement.html">报名表的隐私声明</a>
+			</li>
+		</ul>
+	</footer>
 </body>
 </html>

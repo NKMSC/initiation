@@ -13,59 +13,77 @@
 		<form>
 			<fieldset>
 				<legend>个人信息</legend>
-				<label for="id">学号</label>
-				<input name="id"  placeholder="如1110664"  type="text" required="required" autofocus="autofocus"/>
-				<br/>
-				<label for="name">姓名</label>
-				<input name="name" placeholder="你的名字" required="required" type="text">
+				<div>
+					<label for="id">学号</label>
+					<input name="id"  placeholder="如1110664"  type="text" required="required" autofocus="autofocus"/>
+				</div>
+				<div>
+					<label for="name">姓名</label>
+					<input name="name" placeholder="你的名字" required="required" type="text"/>
+				</div>
+				<div>
+					<label>性别</label>
+					<div class="gender">
+						<input type="radio" name="gender" value="F"/>
+						<span>男生</span>
+						<input type="radio" name="gender" value="M"/>
+						<span>女生</span>
+					</div>
+				</div>
+				<div>
+					<label>学院</label>
+					<select class="input" required="required" name="college">
+						<option value="计控">计算机与控制工程</option>
+						<option value="软件">软件学院</option>
+						<option value="电光">电信与光学工程</option>
+						<option value="数学">数学学院</option>
+						<option value="物理">物理学院</option>
+						<option value="商学">商学院</option>
+						<option value="经济">经济学院</option>
+						<option value="化学">化学学院</option>
+						<option value="生科">生命科学学院</option>
+						<option value="环科">环境科学与工程</option>
+						<option value="文学">文学院</option>
+						<option value="法学">法学院</option>
+						<option value="历史">历史学院</option>
+						<option value="哲学">哲学院</option>
+						<option value="医学">医学院</option>
+						<option value="周政">周恩来政府管理</option>
+						<option value="马克思">马克思主义教育</option>
+						<option value="旅游">旅游与服务学院</option>
+						<option value="外语">外国语学院</option>
+						<option value="汉语">汉语言文化学院</option>
+						<option value="泰达">泰达学院</option>
+						<option value="其它">其它学院</option>
+					</select>
 
-				<br/>
-				<label>学院</label>
-				<select class="input" required="required" name="college">
-					<option value="计控">计算机与控制工程</option>
-					<option value="软件">软件学院</option>
-					<option value="电光">电信与光学工程</option>
-					<option value="数学">数学学院</option>
-					<option value="物理">物理学院</option>
-					<option value="商学">商学院</option>
-					<option value="经济">经济学院</option>
-					<option value="化学">化学学院</option>
-					<option value="生科">生命科学学院</option>
-					<option value="环科">环境科学与工程</option>
-					<option value="文学">文学院</option>
-					<option value="法学">法学院</option>
-					<option value="历史">历史学院</option>
-					<option value="哲学">哲学院</option>
-					<option value="医学">医学院</option>
-					<option value="周政">周恩来政府管理</option>
-					<option value="马克思">马克思主义教育</option>
-					<option value="旅游">旅游与服务学院</option>
-					<option value="外语">外国语学院</option>
-					<option value="汉语">汉语言文化学院</option>
-					<option value="泰达">泰达学院</option>
-					<option value="其它">其它学院</option>
-				</select>
-				<br/>
-				<label>年级</label>
-				<select class="input" required="required" name="grade" id="grade">
-					<option value="计控">大一</option>
-					<option value="软件">大二</option>
-					<option value="电光">大三</option>
-					<option value="数学">大四</option>
-					<option value="物理">研一</option>
-					<option value="商学">研二</option>
-					<option value="经济">研三</option>
-					<option value="化学">博士</option>
-					<option value="生科">其他</option>
-				</select>
+				</div>
+				<div>
+					<label>年级</label>
+					<select class="input" required="required" name="grade" id="grade">
+						<option value="计控">大一</option>
+						<option value="软件">大二</option>
+						<option value="电光">大三</option>
+						<option value="数学">大四</option>
+						<option value="物理">研一</option>
+						<option value="商学">研二</option>
+						<option value="经济">研三</option>
+						<option value="化学">博士</option>
+						<option value="生科">其他</option>
+					</select>
+				</div>
 			</fieldset>
 			<fieldset>
 				<legend>联系方式</legend>
-				<label for="phone">手机</label>
-				<input name="phone" placeholder="你的手机号" required="required" type="number">
-				<br/>
-				<label for="email">邮箱</label>
-				<input name="phone" placeholder="最常用邮箱" required="required" type="email"></fieldset>
+				<div>
+					<label for="phone">手机</label>
+					<input name="phone" placeholder="你的手机号" required="required" type="number"/>
+				</div>
+				<div>
+					<label for="email">邮箱</label>
+					<input name="email" placeholder="最常用邮箱" required="required" type="email"/>
+				</div>
+			</fieldset>
 			<fieldset class="dept">
 				<legend>
 					部门意愿
@@ -75,24 +93,27 @@
 						中看看吧!)
 					</small>
 				</legend>
-				<label for="dept1">第一意愿</label>
-				<select class="dept" name="dept1" id="dept1">
-					<option value="">技术部</option>
-					<option value="">策宣部</option>
-					<option value="">运营部</option>
-				</select>
-				<br/>
-				<label for="dept2">第二意愿</label>
-				<select class="dept" name="dept2" id="dept2">
-					<option value="">策宣部</option>
-					<option value="">运营部</option>
-					<option value="">技术部</option>
-				</select>
+				<div>
+					<label for="dept1">第一意愿</label>
+					<select class="dept" name="dept1" id="dept1">
+						<option value="">技术部</option>
+						<option value="">策宣部</option>
+						<option value="">运营部</option>
+					</select>
+				</div>
+
+				<div>
+					<label for="dept2">第二意愿</label>
+					<select class="dept" name="dept2" id="dept2">
+						<option value="">策宣部</option>
+						<option value="">运营部</option>
+						<option value="">技术部</option>
+					</select>
+				</div>
 			</fieldset>
 			<fieldset>
 				<legend>备注补充</legend>
-				<br/>
-				<textarea class="input" name="info" id="info" placeholder="还有什么重要信息没有些的都可以放这里"></textarea>
+				<textarea name="info" id="info" placeholder="还有什么重要信息没有些的都可以放这里"></textarea>
 			</fieldset>
 			<button id="submit" type="submit" value="提交">确认</button>
 		</form>

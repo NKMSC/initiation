@@ -51,7 +51,7 @@ function checkname( n ){
 function checkgender(){
 
 	var R=document.getElementsByName('gender');
-	for (var i =R.length - 1; i > 0; i-- {
+	for (var i =R.length - 1; i > 0; i--) {
 		if(R[i].checked)
 		{
 			rmv_err('gender');

@@ -59,11 +59,11 @@ label {
 	clear: left;
 }
 label:not([for="dept2"]):before{
-content: '*';
-font-size: 1em;
-color: #FF2222;
+	content: '*';
+	font-size: 1em;
+	color: #FF2222;
 }
-input, select, textarea, .gender {
+input, select, textarea, #gender {
 	/* The text boxes */
 	width: 60%;
 	/* margin-right: 5em;
@@ -81,7 +81,7 @@ option[selected]{
 	background-color:#222;
 	color: #444;
 }
-.gender * {
+#gender * {
 	float: left;
 	margin: 0;
 	padding: 0;
@@ -145,20 +145,27 @@ input:hover, select:hover {
 	color:#444;
 }
 
-.errorTip {
+#error{
+	top: 0.1em;
+	width: 99%;
+	position: fixed;
+	z-index: 100;
+	text-align: center;
+	margin:auto;
+}
+.error-tip {
 	/* The error divs */
+	text-align: center;
+	border: 3px solid green;
 	background-color: #970F08;
 	color: white;
-	font-size: 10px;
-	height: 26px;
+	font-size: 0.9em;
+	font-weight: 100;
 	word-spacing: 0.4px;
-	margin-left: 20px;
 	padding: 5px 0 5px 10px;
-	position: absolute;
 	text-shadow: 1px 1px 0 #555555;
-	width: 200px;
-	right: -130px;
 }
+
 footer {
 	text-align: center;
 }

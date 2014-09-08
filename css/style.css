@@ -137,6 +137,10 @@ input:hover, select:hover {
 	box-shadow: 0 0 8px blue;
 }
 
+input[type="radio"]:active{
+	color: red;
+}
+
 *::-moz-placeholder {
 	color:#444;
 }
@@ -167,7 +171,11 @@ input:hover, select:hover {
 	padding: 5px 0 5px 10px;
 	text-shadow: 1px 1px 0 #555555;
 }
-
+hr{
+	z-index: 99;
+	border: none;
+	border-top: 2px double #444;
+}
 footer {
 	text-align: center;
 }
@@ -176,15 +184,19 @@ footer ul {
 	display: block;
 	color: #444;
 }
+footer ul li{
+	white-space:nowrap;
+}
 footer a, footer a:visited {
-	color: #465c71;
+	color: #555;
 	text-decoration: none; /* 不显示超链接下划线 */
+	border-bottom:1px dashed #465c71;
 }
 @media all and (min-width:800px) {
 	footer li {
 		display: inline;
 	}
-	
+
 	/* 页脚竖线 */
 	footer li:before {
 		margin-right: 0.5em;

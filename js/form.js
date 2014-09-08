@@ -9,6 +9,8 @@ for (var i = 0; i < s.length; i++) {
 		this.style.color="#FFF";
 	}
 	s[i].onclick=function(){
+		this.style.background="#d0ecfd";
+		this.style.color="green";
 		o=this.options;
 		for (var i = o.length - 1; i >= 0; i--) {
 			if(!o[i].disabled){
@@ -19,7 +21,17 @@ for (var i = 0; i < s.length; i++) {
 			}
 		};
 	}
+	s[i].onfocus=function(){
+		this.style.background="#d0ecfd";
+		this.style.color="green";
+	}
+
 };
+
+function nc(s){
+	s.style.color="white";
+	s.style.background="#222";
+}
 
 function err(id,msg){
 	var n=document.getElementById('e-'+id);

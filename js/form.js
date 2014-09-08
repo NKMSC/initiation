@@ -1,6 +1,26 @@
 
 e=document.getElementById("error");
 
+var s=document.getElementsByTagName('select');
+for (var i = 0; i < s.length; i++) {
+	s[i].style.background="#222";
+	s[i].style.color="#444";
+	s[i].onchange=function(){
+		this.style.color="#FFF";
+	}
+	s[i].onclick=function(){
+		o=this.options;
+		for (var i = o.length - 1; i >= 0; i--) {
+			if(!o[i].disabled){
+				o[i].style.color=o[i].selected?'#FFF':'green';
+
+			}else{
+				o[i].color="#444";
+			}
+		};
+	}
+};
+
 function err(id,msg){
 	var n=document.getElementById('e-'+id);
 	if(!n) e.innerHTML+='<div id="e-'+id+'"" onclick="go(\''+id+'\');" class="error-tip">'+msg+'</div>';
@@ -25,12 +45,38 @@ function isNull( s ){
 	return r.test(s); 
 } 
 
-
+function select(s,v){
+	var o=s.options;
+	for (var i = o.length - 1; i >= 0; i--) {
+		if(o[i].value==v)
+		{
+			o[i].selected=true;
+			return true;
+		}
+	}
+}
 
 function checkid( id ){   
 	var r = /^[0-9]{4,}[x|x]?$/; 
 	if( r.test(id))
 	{
+		var auto=arguments[1]?arguments[1]:true;
+		if(auto){
+			var g=document.getElementById('grade');
+			switch(id.substr(0,2)){
+				case '11'://11级大四
+				select(g,'大四');
+				break;
+
+				case '12'://大三
+				select(g,'大三');
+				break;
+				case '13':select(g,'大二');
+				break;
+				case '14':select(g,'大一');
+				break;
+			}
+		}
 		rmv_err('id');
 		return true;
 	}else{
@@ -51,7 +97,7 @@ function checkname( n ){
 function checkgender(){
 
 	var R=document.getElementsByName('gender');
-	for (var i =R.length - 1; i > 0; i--) {
+	for (var i =R.length - 1; i >=0; i--) {
 		if(R[i].checked)
 		{
 			rmv_err('gender');
@@ -132,7 +178,7 @@ function checkform(){
 	var isok=true;
 	
 	var id=V('id');
-	isok&=checkid(id);
+	isok&=checkid(id,false);
 	
 	var name=V('name');
 	isok&=checkname(name);

@@ -1,5 +1,6 @@
-// var form=document.forms[0];
+
 e=document.getElementById("error");
+
 function err(id,msg){
 	var n=document.getElementById('e-'+id);
 	if(!n) e.innerHTML+='<div id="e-'+id+'"" onclick="go(\''+id+'\');" class="error-tip">'+msg+'</div>';
@@ -9,25 +10,22 @@ function rmv_err(id){
 	var n=document.getElementById('e-'+id);
 	if(n) e.removeChild(n);
 }
+function go(id){
+	rmv_err(id);
+	document.getElementById(id).focus();
+}
 
 function V(s){
-	if(s!='gender'){
-		return document.getElementById(s).value;
-	}else{
-
-	}
-
+	return document.getElementById(s).value;
 }
+
 function isNull( s ){ 
 	if ( s == ""|s==null ) return true; 
 	var r =/"^[ ]+$"/; 
 	return r.test(s); 
 } 
 
-function go(id){
-	rmv_err(id);
-	document.getElementById(id).focus();
-}
+
 
 function checkid( id ){   
 	var r = /^[0-9]{4,}[x|x]?$/; 
@@ -36,7 +34,7 @@ function checkid( id ){
 		rmv_err('id');
 		return true;
 	}else{
-		err('id','请填写正确的学号！(学号我们仅作为核实身份用!)');
+		err('id','请填写正确的学号！(学号我们仅作为核实身份用^_^)');
 		return false;
 	}
 }
@@ -52,6 +50,16 @@ function checkname( n ){
 }
 function checkgender(){
 
+	var R=document.getElementsByName('gender');
+	for (var i =R.length - 1; i > 0; i--) {
+		if(R[i].checked)
+		{
+			rmv_err('gender');
+			return true;
+		}
+	};
+	err('gender','性别二选一!')
+	return false;
 }
 
 function checkcollege(c){
@@ -82,7 +90,7 @@ function checkphone(p){
 		rmv_err('phone');
 		return true;
 	}else{
-		err('phone','请填写,你的国内11位手机号!(方便我们短信通知你)');
+		err('phone','请填写,你的国内11位手机号!(方便我们短信通知你^_^)');
 		return false;
 	}
 }
@@ -92,14 +100,14 @@ function checkemail(e) {
 		rmv_err('email');
 		return true;
 	}else{
-		err('email',"请填写正确的邮箱！(详细信息我们会发送邮件给你)");
+		err('email',"请填写正确的邮箱！(详细信息我们会发送邮件给你^_^)");
 		return false;
 	}
 }
 function checkdept1(d){
 	if(isNull(d))
 	{
-		err('dept1','请选择你希望加入的部门！');
+		err('dept1','请选择你希望加入的部门！(技术部会有笔试(^▽^))');
 		return false;
 	}else{
 		var d2=document.getElementById('dept2');
@@ -107,20 +115,44 @@ function checkdept1(d){
 			var o=d2.options[i];
 			if(o.value==d){
 				o.disabled=true;
-			}else if(!isNull(o.value)) {
+			}else{
 				o.disabled=false;
-				o.selected=true;
+				if(!isNull(o.value)){
+					o.selected=true;
+			}else{//把备选选项变成不选择
+				o.text='不选择';
 			}
-		};
-		rmv_err('dept1');
-		return true;
-	}
+		}
+	};
+	rmv_err('dept1');
+	return true;
 }
-function checkform(f){
+}
+function checkform(){
+	var isok=true;
+	
 	var id=V('id');
+	isok&=checkid(id);
+	
 	var name=V('name');
-	//var	gender=V('gender');
+	isok&=checkname(name);
+
+	isok&=checkgender();
+
 	var college=V('college');
-	alert(id+name+gender+college);
-	return false;
+	isok&=checkcollege(college);
+
+	var grade=V('grade');
+	isok&=checkgrade(grade);
+
+	var phone=V('phone');
+	isok&=checkphone(phone);
+
+	var email=V('email');
+	isok&=checkemail(email);
+
+	var dept1=V('dept1');
+	isok&=checkdept1(dept1);
+
+	return Boolean(isok);
 };

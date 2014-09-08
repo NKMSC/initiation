@@ -1,6 +1,26 @@
 
 e=document.getElementById("error");
 
+var s=document.getElementsByTagName('select');
+for (var i = 0; i < s.length; i++) {
+	s[i].style.background="#222";
+	s[i].style.color="#444";
+	s[i].onchange=function(){
+		this.style.color="#FFF";
+	}
+	s[i].onclick=function(){
+		o=this.options;
+		for (var i = o.length - 1; i >= 0; i--) {
+			if(!o[i].disabled){
+				o[i].style.color=o[i].selected?'#FFF':'green';
+
+			}else{
+				o[i].color="#444";
+			}
+		};
+	}
+};
+
 function err(id,msg){
 	var n=document.getElementById('e-'+id);
 	if(!n) e.innerHTML+='<div id="e-'+id+'"" onclick="go(\''+id+'\');" class="error-tip">'+msg+'</div>';

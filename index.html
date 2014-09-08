@@ -30,10 +30,10 @@
 				</div>
 				<div>
 					<label>性别</label>
-					<div id="gender" onblur="checkgender();" >
-						<input type="radio" name="gender" value="M" required/>
+					<div id="gender" onmouseout="checkgender();" >
+						<input type="radio" name="gender" value="M" checked/>
 						<span>男生</span>
-						<input type="radio" name="gender" value="F"/>
+						<input type="radio" name="gender" value="F" required/>
 						<span>女生</span>
 					</div>
 				</div>
@@ -110,7 +110,7 @@
 				</legend>
 				<div>
 					<label for="dept1">第一意愿</label>
-					<select id="dept1" name="dept1" onblur="checkdept1(this.value);"  required>
+					<select id="dept1" name="dept1" onchange="checkdept1(this.value);" onblur="checkdept1(this.value);"  required>
 						<option value="" selected disabled>最想去的部门</option>
 						<option value="技术部">技术部</option>
 						<option value="策宣部">策宣部</option>

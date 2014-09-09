@@ -1,0 +1,105 @@
+body {
+	background-color: #ECECEC;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color: #AA9E9E;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+}
+.error{
+	background: red;
+}
+
+main {
+	width: 90%;
+	margin: 0 auto;
+}
+
+ p span {
+ 	color: #F7F7F6;
+	text-shadow: 0px 0px 2px #222, 0px 1px 1px #ddd, 0px 2px 1px #d6d6d6, 0px 3px 1px #ccc, 0px 4px 1px #c5c5c5, 0px 5px 1px #c1c1c1, 0px 6px 1px #bbb, 0px 7px 1px #777, 0px 8px 3px rgba(100, 100, 100, 0.4), 0px 9px 5px rgba(100, 100, 100, 0.1), 0px 10px 7px rgba(100, 100, 100, 0.15), 0px 11px 9px rgba(100, 100, 100, 0.2), 0px 12px 11px rgba(100, 100, 100, 0.25), 0px 13px 15px rgba(100, 100, 100, 0.3);
+	-webkit-transition: all .1s linear;
+	transition: all .1s linear;
+}
+ p span:hover {
+	text-shadow: 0px 0px 2px #222, 0px 1px 1px #fff, 0px 2px 1px #fff, 0px 3px 1px #fff, 0px 4px 1px #fff, 0px 5px 1px #fff, 0px 6px 1px #fff, 0px 7px 1px #777, 0px 8px 3px #fff, 0px 9px 5px #fff, 0px 10px 7px #fff, 0px 11px 9px #fff, 0px 12px 11px #fff, 0px 13px 15px #fff;
+	-webkit-transition: all .1s linear;
+	transition: all .1s linear;
+}
+ p ,h1{
+	text-align: center;
+	color: #666;
+	font-family: cursive;
+	font-size: 20px;
+	text-shadow: 0 1px 0 #fff;
+	letter-spacing: 1px;
+	line-height: 2em;
+	/* margin-top: -50px;
+	*/
+}
+h1 {
+	padding-top: 45px;
+	font-size: 4em;
+	font-weight: bold;
+	line-height: 1.1em;
+	letter-spacing: 5px;
+	color: #fff;
+}
+ p a {
+	font-family: cursive;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 10px;
+	letter-spacing: 5px;
+	color: #AAA;
+	text-decoration: none;
+	cursor: pointer;
+	/*text-shadow: 0px 0px 2px #222, 0px 1px 1px #ddd, 0px 2px 1px #666, 0px 3px 1px #ccc, 0px 4px 1px #c5c5c5, 0px 5px 1px #c1c1c1, 0px 6px 1px #bbb, 0px 7px 1px #777, 0px 8px 3px rgba(100, 100, 100, 0.4), 0px 9px 5px rgba(100, 100, 100, 0.1), 0px 10px 7px rgba(100, 100, 100, 0.15), 0px 11px 9px rgba(100, 100, 100, 0.2), 0px 12px 11px rgba(100, 100, 100, 0.25), 0px 13px 15px rgba(100, 100, 100, 0.3);*/
+	-webkit-transition: all .1s linear;
+	transition: all .1s linear;
+	border-bottom: 1px dashed #888;
+}
+ p a:hover {
+	text-shadow: 0px 0px 2px #222, 0px 1px 1px #fff, 0px 2px 1px #fff, 0px 3px 1px #fff, 0px 4px 1px #fff, 0px 5px 1px #fff, 0px 6px 1px #fff, 0px 7px 1px #777, 0px 8px 3px #fff, 0px 9px 5px #fff, 0px 10px 7px #fff, 0px 11px 9px #fff, 0px 12px 11px #fff, 0px 13px 15px #fff;
+	-webkit-transition: all .1s linear;
+	transition: all .1s linear;
+}
+.tip{
+	padding: 1em;
+border:dashed wheat;	
+}
+
+footer {
+	text-align: center;
+	margin-top: 100px;
+	font-size: 1.1em;
+}
+
+
+footer ul {
+	list-style-type: none;
+	display: block;
+	color: #999;
+}
+footer ul li {
+	white-space: nowrap;
+}
+footer a, footer a:visited {
+	color: #999;
+	text-decoration: none; /* 不显示超链接下划线 */
+	border-bottom: 1px dashed #465c71;
+}
+@media all and (min-width:800px) {
+	footer li {
+		display: inline;
+	}
+	
+	/* 页脚竖线 */
+	footer li:before {
+		margin-right: 0.5em;
+		content: '|';
+	}
+	footer li:first-child:before {
+		content: ' ';
+	}
+}

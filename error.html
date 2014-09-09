@@ -1,47 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=2.0,user-scalable=no" />
 	<title>提交失败</title>
+	<link rel="stylesheet" type="text/css" href="css/info.css"/>
 </head>
-<body>
-	<h1>信息提交失败！</h1>
+<body class="error">
+	<h1>出错啦！</h1>
 	<main>
-
-		<p>出错啦！</p>
 		<p id='info'></p>
-		<p>
-			我们会发送一封确认邮件给您
-		</p>
-		<p>请确认你的信息是否填写正确,如有疑问请联系我们<a>new@nkumstc.cn</a>
+		<p class="tip">请确认你的信息是否填写正确<br/>如有疑问请联系我们<a><email>newATnkumstc.cn</email></a>
 		</p>
 		<p>你还可以<a>重新填写</a>或者逛逛<a>南微软</a>!</p>
 	</main>
-	<hr/>
 	<footer>
 		<ul>
-			<li>
-				Copyright&copy;2014
-				<a href="http://nkumstc.cn">NKU MSTC</a>
-			</li>
-			<li>Created by
-				<a>New Future</a> and <a>ZHANG ZhiQiang</a>
-			</li>
-			<li>Translated by <a>New Future</a></li>
-			<li>
-				Supported by<a href="http://department.nkumstc.cn/technology.html">Technology Department</a>
-			</li>
-			<li>
-				<a href="../">
-					Chinese Edition(中文版)
-				</a>
-			</li>
-			<li>
-				Visit
-				<a href="privacystatement.html">Privacy Statement</a>
-			</li>
+			<li> Copyright&copy;2001-2014 <a href="http://nkumstc.cn">NKUMSTC</a></li>
+			<li>Created by <a href="http://new-future.cn">NewFuture</a></li>
+			<li>Supported by <a href="http://department.nkumstc.cn/technology.html">NKUMSTC技术部</a></li>
+			<li>意见反馈：<a href="mailto:tATnkumstcDOTcn"onclick="this.href=this.href.replace(/AT/,'&#64;').replace(/DOT/,'&#46;')"id='email'><email>tATnkumstcDOTcn</email></a></li>
 		</ul>
 	</footer>
 </body>
+<script src="js/info.js" defer></script>
+</html>
 </html>

@@ -1,7 +1,7 @@
 <?php
 /*信息录入*/
-require("connect.php");
-require("SendEmail.php");
+require_once("connect.php");
+require_once("SendEmail.php");
 header("Content-type: text/html; charset=utf-8"); 
 //获取POST参数 空则返回null
 function GetPost($name)
@@ -98,8 +98,25 @@ if($check_result&&mysql_fetch_array($check_result))
 	if($result)
 	{
         //发送邮件
-        SendEmail($email);
-		Success('信息修改成功');
+        $person=query_id($id);
+        $person=json_decode($person);
+        
+        //echo "person->$person<br>";
+        if($person==false){
+            Error("查询信息失败");
+        }else{
+            echo $person->id."<br>";
+            $msg="<html><body><h3>这是来自南微软俱乐部的验证邮件</h3>(为了确保您能及时收到邮件，请将我们添加为好友，否则邮件会进入垃圾箱)<br><table id=\"table\" align=\"center\"><thead><tr><td>学号</td><td>姓名</td><td>性别</td><td>学院</td><td>年级</td><td>手机</td><td>邮箱</td><td>意愿一</td><td>意愿二</td></tr></thead><tbody><tr><td>".$person->id."</td><td>".$person->name."</td><td>".$person->gender+"</td><td>".$person->college."</td><td>".$person->grade."</td><td>".$person->phone."</td><td>".$person->email."</td><td>".$person->dept1."</td><td>".$person->dept2."</td></tr><tr><td>备注</td><td colspan=\"8\">".$person->info."</td></tr></tbody></table></body></html>";
+
+            echo "new.php->msg:".$msg."<br>";
+            $SendEmailoResult=SendEmail($email,$msg);
+            if($SendEmailoResult==true){
+                Success('修改信息成功');
+            }else{
+                Error("发送邮件失败"+$SendEmailoResult);
+            }
+        }
+        
 	}else{
 		//更新失败
 		Error("更新数据失败:".mysql_error());
@@ -110,12 +127,23 @@ if($check_result&&mysql_fetch_array($check_result))
 	if($result)
 	{
         //发送邮件
-        $SendEmailoResult=SendEmail($email);
-        if($SendEmailoResult==true){
-            Success('提交成功');
+        $person=query_id($id);
+        $person=json_decode($person);
+        //echo "person->$person<br>";
+        if($person==false){
+            Error("查询信息失败");
         }else{
-            Error("发送邮件失败"+$SendEmailoResult);
+            $msg="<html><body><h3>这是来自南微软俱乐部的验证邮件</h3>(为了确保您能及时收到邮件，请将我们添加为好友，否则邮件会进入垃圾箱)<br><table id=\"table\" align=\"center\"><thead><tr><td>学号</td><td>姓名</td><td>性别</td><td>学院</td><td>年级</td><td>手机</td><td>邮箱</td><td>意愿一</td><td>意愿二</td></tr></thead><tbody><tr><td>".$person->id."</td><td>".$person->name."</td><td>".$person->gender+"</td><td>".$person->college."</td><td>".$person->grade."</td><td>".$person->phone."</td><td>".$person->email."</td><td>".$person->dept1."</td><td>".$person->dept2."</td></tr><tr><td>备注</td><td colspan=\"8\">".$person->info."</td></tr></tbody></table></body></html>";
+
+            echo "new.php->msg:".$msg."<br>";
+            $SendEmailoResult=SendEmail($email,$msg);
+            if($SendEmailoResult==true){
+                Success('提交成功');
+            }else{
+                Error("发送邮件失败"+$SendEmailoResult);
+            }
         }
+        
 		
 	}else{
         Error("插入数据失败:".mysql_error());

@@ -60,6 +60,9 @@ if($dept2&&!in_array($dept2, $dept_lsit))
 {
 	$dept2=null;
 }
+if($info){
+    $info=htmlspecialchars($info);
+}
 //发送邮件的msg
 if($gender=="M"){
 	$RealGender="男";
@@ -72,8 +75,8 @@ $CheckSql="select * from initiation where id=$id";
 $check_result=mysql_query($CheckSql);
 if($check_result&&mysql_fetch_array($check_result))
 {			//已经注册过
-	$altertime=date(‘Y-m-d H:i:s’);
-	$strSQL="update initiation set name='$name',gender='$gender',college='$college',grade='$grade', phone='$phone',email='$email',dept1='$dept1',dept2='$dept2',regtime='$regtime',info='$info' where id=$id";
+	$altertime=date('Y-m-d H:i:s');
+	$strSQL="update initiation set name='$name',gender='$gender',college='$college',grade='$grade', phone='$phone',email='$email',dept1='$dept1',dept2='$dept2',altertime='$altertime',info='$info' where id=$id";
 	$result=mysql_query($strSQL);//成功返回true 失败返回false
 	if($result)
 	{
@@ -86,9 +89,9 @@ if($check_result&&mysql_fetch_array($check_result))
 		Error("更新数据失败:".mysql_error());
 	}
 }else{			//没有注册过
-	$regtime=date(‘Y-m-d H:i:s’);
-	$altertime=date(‘Y-m-d H:i:s’);
-	$strSQL="insert into initiation values('$id','$name','$gender','$college','$grade','$phone','$email','$dept1','$dept2',$regtime,$altertime,'$info')";
+	$regtime=date('Y-m-d H:i:s');
+	$altertime=date('Y-m-d H:i:s');
+	$strSQL="insert into initiation values('$id','$name','$gender','$college','$grade','$phone','$email','$dept1','$dept2','$regtime','$altertime','$info')";
 	$result=mysql_query($strSQL);//成功返回资源标识符，失败返回false
 	if($result)
 	{
@@ -125,7 +128,7 @@ function Success($suc_info,$table)
 	header("Content-type: text/html; charset=utf-8"); 
 	Header("Location: http://q.nkumstc.cn/success.html?$name 童鞋,$suc_info,请留意邮箱$email"); 
 	$head='<head><style type="text/css">table{border-collapse:collapse;}table,td, th{border:1px solid black;padding:5px;}</style></head>';
-	$body='<h2>亲爱的'.$name.'童鞋,'.$suc_info.'</h2>'.$table.'<h3><strong>如果信息有误请前于报名入口<a href="http://q.nkumstc.cn">http://q.kumstc.cn</a>再次录入信息！</strong></h3><p>需要更多信息可访问<a href="http://nkumstc.cn">南微软主页(NKUSMCT.CN)</a>,或者在下面的媒体渠道关注联系我们</p><br/>人人：个人主页<a href=\"http://www.renren.com/318793631/profile\">南微软</a><br>人人：公共主页<a href=\"http://page.renren.com/601898669\">南微软</a><br>微博：<a href=\"http://weibo.com/nkumstc\">南开大学微软技术俱乐部</a><br><small>为了确保您能及时收到邮件，<strong>请将此邮箱添加入通讯录或者白名单</strong>，避免邮件有可能会进入垃圾箱！</small><br/><small>如果以上不是你的个人信息请忽略此邮件！</small><p align="right">南开大学微软技术俱乐部</p></body>';
+	$body='<h2>亲爱的'.$name.'童鞋,'.$suc_info.'</h2>'.$table.'<h3><strong>如果信息有误请前于报名入口<a href="http://q.nkumstc.cn">http://q.kumstc.cn</a>再次录入信息！</strong></h3><p>需要更多信息可访问<a href="http://nkumstc.cn">南微软主页(NKUSMCT.CN)</a>,或者在下面的媒体渠道关注联系我们</p><br/>人人：个人主页<a href="http://www.renren.com/318793631/profile">南微软</a><br>人人：公共主页<a href="http://page.renren.com/601898669">南微软</a><br>微博：<a href="http://weibo.com/nkumstc">南开大学微软技术俱乐部</a><br><small>为了确保您能及时收到邮件，<strong>请将此邮箱添加入通讯录或者白名单</strong>，避免邮件有可能会进入垃圾箱！</small><br/><small>如果以上不是你的个人信息请忽略此邮件！</small><p align="right">南开大学微软技术俱乐部</p></body>';
 	$msg='<html>'.$head.$body.'</html>';
 	
 	$send_result=SendEmail($email,$msg);

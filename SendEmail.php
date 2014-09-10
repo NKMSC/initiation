@@ -11,7 +11,7 @@ function SendEmail($address,$msg)
     $mail->Host = "smtp.qq.com";
     $mail->Port = 25; 
     $mail->IsHTML(true);
-    $mail->Username = "997833949@qq.com";
+    $mail->Username = "new@nkumstc.cn";
     $mail->Password = "renyujie910";
     $mail->SetFrom("new@nkumstc.cn","南微软纳新管理");
     $mail->Subject = "南微软纳新信息核对邮件";

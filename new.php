@@ -118,13 +118,13 @@ function Error($error_info)
 // 跳转到成功页面 并发送邮件
 function Success($suc_info,$table)
 {
+	header("Content-type: text/html; charset=utf-8"); 
+	Header("Location: http://q.nkumstc.cn/success.html?$suc_info,请留意你的邮箱$email"); 
 	$head='<head><style type="text/css">table{border-collapse:collapse;}table,td, th{border:1px solid black;padding:5px;}</style></head>';
 	$body='<h2 align="center">'.$suc_info.'</h2>'.$table.'<h3><strong>如果信息有误请前于报名入口<a href="http://q.nkumstc.cn">http://q.kumstc.cn</a>再次录入信息！</strong></h3><b>需要更多信息你可以访问<a href="http://nkumstc.cn">南微软主页(NKUSMCT.CN)</a>,或者在下面的媒体渠道关注联系我们</b><br/>人人：个人主页<a href=\"http://www.renren.com/318793631/profile\">南微软</a><br>人人：公共主页<a href=\"http://page.renren.com/601898669\">南微软</a><br>微博：<a href=\"http://weibo.com/nkumstc\">南开大学微软技术俱乐部</a><br><small>为了确保您能及时收到邮件，<strong>请将此邮箱添加入通讯录或者白名单</strong>，避免邮件有可能会进入垃圾箱！</small><br/><small>如果以上不是你的个人信息请忽略此邮件！</small><p align="right">南开大学微软技术俱乐部</p></body>';
 	$msg='<html>'.$head.$body.'</html>';
 	global $email;
 	$send_result=SendEmail($email,$msg);
-	header("Content-type: text/html; charset=utf-8"); 
-	Header("Location: http://q.nkumstc.cn/success.html?$suc_info,请留意你的邮箱$email"); 
 	if($send_result===true){
 		echo "信息确认邮件已发送至$email";
 	}else{
@@ -134,4 +134,4 @@ function Success($suc_info,$table)
 
 ?>
 <h1>信息处理中...</h1>
-如果超过一分钟未跳转请联系我们
+<p>如果超过一分钟未跳转请联系我们</p>

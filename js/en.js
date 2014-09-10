@@ -1,4 +1,4 @@
-
+//for english
 e=document.getElementById("error");
 var s=document.getElementsByTagName('select');
 for (var i = 0; i < s.length; i++) {
@@ -94,17 +94,17 @@ function checkid( id ){
 		rmv_err('id');
 		return true;
 	}else{
-		err('id','请填写正确的学号！(学号我们仅作为核实身份用^_^)');
+		err('id','Please fill in the student ID for verification');
 		return false;
 	}
 }
 function checkname( n ){
-	var r = /^([\u4E00-\uFA29]|[\uE7C7-\uE7F3]){2,10}$/;   
+	var r = /^([\u4E00-\uFA29]|[\uE7C7-\uE7F3]|[A-Z]|[a-z]){2,10}$/;   
 	if(r.test(n)){
 		rmv_err('name');
 		return true;
 	}else{
-		err('name',"请输填写你的中文姓名！");
+		err('name',"Please fill in your name .It is better  to use your Chinese Name ！");
 		return false;
 	}
 }
@@ -118,14 +118,14 @@ function checkgender(){
 			return true;
 		}
 	};
-	err('gender','性别二选一!')
+	err('gender','check your gender!')
 	return false;
 }
 
 function checkcollege(c){
 	if(isNull(c))
 	{
-		err('college','请选择学院,如果列表中没有你所在的学院请选择“其他”，并在备注中说明！');
+		err('college','Please select your college,if your college is not in this form please select “Other College”, and note in comment！');
 		return false;
 	}else{
 		rmv_err('college');
@@ -136,7 +136,7 @@ function checkcollege(c){
 function checkgrade(g){
 	if(isNull(g))
 	{
-		err('grade','请选择你本学期所在的年级,如果你不是南开大学的学生，请选择“其他”并在备注中说明！');
+		err('grade','Please select your grade ! if you are not a student , please select " “Others",and Note in Comment！');
 		return false;
 	}else{
 		rmv_err('grade');
@@ -150,7 +150,7 @@ function checkphone(p){
 		rmv_err('phone');
 		return true;
 	}else{
-		err('phone','请填写,你的国内11位手机号!(方便我们短信通知你^_^)');
+		err('phone','Please write your phone number(11-digit) in China !(we will send important notice by SMS)');
 		return false;
 	}
 }
@@ -160,14 +160,14 @@ function checkemail(e) {
 		rmv_err('email');
 		return true;
 	}else{
-		err('email',"请填写正确的邮箱！(详细信息我们会发送邮件给你^_^)");
+		err('email',"Please write your email address correctly!(we will tell you the progress and details via email. )");
 		return false;
 	}
 }
 function checkdept1(d){
 	if(isNull(d))
 	{
-		err('dept1','请选择你希望加入的部门！(技术部会有笔试(^▽^))');
+		err('dept1','Please select the department  that you most wish to jion. (PS: Technology Department will have the written test)');
 		return false;
 	}else{
 		var d2=document.getElementById('dept2');

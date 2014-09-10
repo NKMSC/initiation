@@ -90,7 +90,7 @@ if($check_result&&mysql_fetch_array($check_result))
 	if($result)
 	{
 		$table="<table id=\"table\"><thead><tr><td>学号</td><td>姓名</td><td>性别</td><td>学院</td><td>年级</td><td>手机</td><td>邮箱</td><td>意愿一</td><td>意愿二</td></tr></thead><tbody><tr><td>$id</td><td>$name</td><td>$RealGender</td><td>$college</td><td>$grade</td><td>$phone</td><td>$email</td><td>$dept1</td><td>$dept2</td></tr><tr><td>备注</td><td colspan=\"8\">$info</td></tr></tbody></table>";
-		Success('报名信息提交成功',$table);		
+		Success('你的报名信息提交成功',$table);		
 	}else{
 		Error("插入数据失败:".mysql_error());
 	}
@@ -120,10 +120,11 @@ function Success($suc_info,$table)
 {
 	header("Content-type: text/html; charset=utf-8"); 
 	Header("Location: http://q.nkumstc.cn/success.html?$suc_info,请留意你的邮箱$email"); 
+	global $email;global $name;
 	$head='<head><style type="text/css">table{border-collapse:collapse;}table,td, th{border:1px solid black;padding:5px;}</style></head>';
-	$body='<h2 align="center">'.$suc_info.'</h2>'.$table.'<h3><strong>如果信息有误请前于报名入口<a href="http://q.nkumstc.cn">http://q.kumstc.cn</a>再次录入信息！</strong></h3><b>需要更多信息你可以访问<a href="http://nkumstc.cn">南微软主页(NKUSMCT.CN)</a>,或者在下面的媒体渠道关注联系我们</b><br/>人人：个人主页<a href=\"http://www.renren.com/318793631/profile\">南微软</a><br>人人：公共主页<a href=\"http://page.renren.com/601898669\">南微软</a><br>微博：<a href=\"http://weibo.com/nkumstc\">南开大学微软技术俱乐部</a><br><small>为了确保您能及时收到邮件，<strong>请将此邮箱添加入通讯录或者白名单</strong>，避免邮件有可能会进入垃圾箱！</small><br/><small>如果以上不是你的个人信息请忽略此邮件！</small><p align="right">南开大学微软技术俱乐部</p></body>';
+	$body='<h2 align="center">'."亲爱的$name童鞋,".$suc_info.'</h2>'.$table.'<h3><strong>如果信息有误请前于报名入口<a href="http://q.nkumstc.cn">http://q.kumstc.cn</a>再次录入信息！</strong></h3><b>需要更多信息你可以访问<a href="http://nkumstc.cn">南微软主页(NKUSMCT.CN)</a>,或者在下面的媒体渠道关注联系我们</b><br/>人人：个人主页<a href=\"http://www.renren.com/318793631/profile\">南微软</a><br>人人：公共主页<a href=\"http://page.renren.com/601898669\">南微软</a><br>微博：<a href=\"http://weibo.com/nkumstc\">南开大学微软技术俱乐部</a><br><small>为了确保您能及时收到邮件，<strong>请将此邮箱添加入通讯录或者白名单</strong>，避免邮件有可能会进入垃圾箱！</small><br/><small>如果以上不是你的个人信息请忽略此邮件！</small><p align="right">南开大学微软技术俱乐部</p></body>';
 	$msg='<html>'.$head.$body.'</html>';
-	global $email;
+	
 	$send_result=SendEmail($email,$msg);
 	if($send_result===true){
 		echo "信息确认邮件已发送至$email";

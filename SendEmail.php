@@ -1,10 +1,9 @@
 <?php
 require_once 'class.phpmailer.php';
-//getVerification();
 //该函数用来发邮件
-function SendEmail($address,$msg){
+function SendEmail($address,$msg)
+{
     $mail = new PHPMailer;
-    $content=encodingVerification($address);
     $mail->CharSet = "utf-8";
     $mail->IsSMTP();                               // Set mailer to use SMTP
     $mail->SMTPAuth = true; // authentication enabled
@@ -21,9 +20,7 @@ function SendEmail($address,$msg){
     if(!$mail->Send())
     {
        return $mail->ErrorInfo;
-   }
-   else
-   {
+   } else {
     return true;
 }
 }

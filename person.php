@@ -66,7 +66,7 @@ if(isset($_POST["pwd"])){
 			
 			//查询所有
 			function GetAll(){
-				$strSQL="select * from initiation";
+				$strSQL="select * from initiation order by regtime esc";
 				$result=mysql_query($strSQL);
 				return $result;
 			}
@@ -78,7 +78,7 @@ if(isset($_POST["pwd"])){
 			}
 			//从数据中取出特定数目的结果
 			function SelectPagesize($offset){
-				$strSQL="select * from initiation limit $offset,".PAGESIZE;
+				$strSQL="select * from initiation order by regtime desc limit $offset,".PAGESIZE;
 				//echo "SelectPagesize->param:$strSQL<br>";
 				$result=mysql_query($strSQL);
 				return $result;

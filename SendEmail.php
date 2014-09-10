@@ -15,7 +15,7 @@ function SendEmail($address,$msg){
     $mail->Username = "997833949@qq.com";
     $mail->Password = "renyujie910";
     $mail->SetFrom("new@nkumstc.cn","南微软纳新管理");
-    $mail->Subject = "南微软纳新确认邮件";
+    $mail->Subject = "南微软纳新信息核对邮件";
     $mail->Body=$msg; 
     $mail->AddAddress($address);
     if(!$mail->Send())

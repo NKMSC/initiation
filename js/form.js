@@ -1,16 +1,12 @@
 
 e=document.getElementById("error");
-
 var s=document.getElementsByTagName('select');
 for (var i = 0; i < s.length; i++) {
 	s[i].style.background="#222";
 	s[i].style.color="#444";
-	s[i].onchange=function(){
-		this.style.color="#FFF";
-	}
 	s[i].onclick=function(){
-		this.style.background="#d0ecfd";
-		this.style.color="green";
+		// this.style.background="rgb(56,46,44,0.8)";
+		this.style.color="#58FE50";
 		o=this.options;
 		for (var i = o.length - 1; i >= 0; i--) {
 			if(!o[i].disabled){
@@ -35,15 +31,19 @@ function nc(s){
 
 function err(id,msg){
 	var n=document.getElementById('e-'+id);
-	if(!n) e.innerHTML+='<div id="e-'+id+'"" onclick="go(\''+id+'\');" class="error-tip">'+msg+'</div>';
+	if(!n) e.innerHTML+='<div id="e-'+id+'" onclick="go(\''+id+'\');" class="error-tip">'+msg+'</div>';
 }
 
 function rmv_err(id){
-	var n=document.getElementById('e-'+id);
-	if(n) e.removeChild(n);
+	if(id){
+		var n=document.getElementById('e-'+id);
+		if(n) e.removeChild(n);
+	}else{
+		e.innerHTML='';
+	}
 }
 function go(id){
-	rmv_err(id);
+	rmv_err();
 	document.getElementById(id).focus();
 }
 
@@ -63,6 +63,8 @@ function select(s,v){
 		if(o[i].value==v)
 		{
 			o[i].selected=true;
+			o[i].style.color="#FFF";
+			s.style.color="#FFF";			
 			return true;
 		}
 	}
@@ -169,23 +171,23 @@ function checkdept1(d){
 		return false;
 	}else{
 		var d2=document.getElementById('dept2');
-		for (var i = d2.options.length - 1; i >= 0; i--) {
+		var no=d2.options[0];
+		no.disabled=false;
+		no.text="不选择";
+		no.value="无";
+		for (var i = d2.options.length - 1; i >= 1; i--) {
 			var o=d2.options[i];
 			if(o.value==d){
 				o.disabled=true;
+				d2.style.color="#FFF";
 			}else{
 				o.disabled=false;
-				if(!isNull(o.value)){
-					o.selected=true;
-			}else{//把备选选项变成不选择
-				o.text='不选择';
-				o.value='无';
+				o.selected=true;
 			}
-		}
-	};
-	rmv_err('dept1');
-	return true;
-}
+		};
+		rmv_err('dept1');
+		return true;
+	}
 }
 function checkform(){
 	var isok=true;

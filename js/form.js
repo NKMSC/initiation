@@ -179,6 +179,7 @@ function checkdept1(d){
 					o.selected=true;
 			}else{//把备选选项变成不选择
 				o.text='不选择';
+				o.value='无';
 			}
 		}
 	};

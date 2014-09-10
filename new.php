@@ -72,7 +72,8 @@ $CheckSql="select * from initiation where id=$id";
 $check_result=mysql_query($CheckSql);
 if($check_result&&mysql_fetch_array($check_result))
 {			//已经注册过
-	$strSQL="update initiation set name='$name',gender='$gender',college='$college',grade='$grade', phone='$phone',email='$email',dept1='$dept1',dept2='$dept2',info='$info' where id=$id";
+	$altertime=date(‘Y-m-d H:i:s’);
+	$strSQL="update initiation set name='$name',gender='$gender',college='$college',grade='$grade', phone='$phone',email='$email',dept1='$dept1',dept2='$dept2',regtime='$regtime',info='$info' where id=$id";
 	$result=mysql_query($strSQL);//成功返回true 失败返回false
 	if($result)
 	{
@@ -85,7 +86,9 @@ if($check_result&&mysql_fetch_array($check_result))
 		Error("更新数据失败:".mysql_error());
 	}
 }else{			//没有注册过
-	$strSQL="insert into initiation values('$id','$name','$gender','$college','$grade','$phone','$email','$dept1','$dept2','$info')";
+	$regtime=date(‘Y-m-d H:i:s’);
+	$altertime=date(‘Y-m-d H:i:s’);
+	$strSQL="insert into initiation values('$id','$name','$gender','$college','$grade','$phone','$email','$dept1','$dept2',$regtime,$altertime,'$info')";
 	$result=mysql_query($strSQL);//成功返回资源标识符，失败返回false
 	if($result)
 	{

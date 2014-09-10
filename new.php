@@ -28,7 +28,12 @@ function Success($suc_info,$table)
 	$body='<h3>'.$suc_info.'</h3>'.$table."<h4>如果信息有误请前于报名入口<a href='http://q.nkumstc.cn'>q.kumstc.cn</a>再次录入信息！</h4><b>需要更多信息你可以访问<a href='http://nkumstc.cn'>南微软官方主页</a>,或者在下面的媒体渠道关注联系我们</b>人人：个人主页<a href=\"http://www.renren.com/318793631/profile\">南微软</a><br>人人：公共主页<a href=\"http://page.renren.com/601898669\">南微软</a><br>微博：<a href=\"http://weibo.com/nkumstc\">南开大学微软技术俱乐部</a><br><small>为了确保您能及时收到邮件，请将此邮箱添加入通讯录或者白名单，避免邮件有可能会进入垃圾箱！</small><small>如果以上不是你的个人信息请忽略此邮件！</small></body>";
 	$msg='<html>$head $body</html>';
 	global $email;
-	SendEmail($email,$msg);
+	$send_result=SendEmail($email,$msg);
+	if($send_result===true){
+		echo "信息确认邮件已发送至$email";
+	}else{
+		echo "确认邮件发送失败：$send_result";
+	}
 	Header("Location: http://q.nkumstc.cn/success.html?$suc_info,请留意你的邮箱$email"); 
 }
 

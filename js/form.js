@@ -1,5 +1,7 @@
-
 e=document.getElementById("error");
+
+e.innerHTML='<div id="e-test" class="error-tip" onclick="rmv_err(\'test\')" style="color:yellow;background: green;">注意:现在仅为是内部测试阶段,所有功能仅供内测使用,你填写的所有数据均会在正式纳新时删除，任何问题或建议均可以反馈到<a href="mailto:t@nkusmtc.cn">t@nkumstc.cn</a>。 感谢支持！</div>';
+
 var s=document.getElementsByTagName('select');
 for (var i = 0; i < s.length; i++) {
 	s[i].style.background="#222";

@@ -99,12 +99,12 @@ function checkid( id ){
 	}
 }
 function checkname( n ){
-	var r = /^([\u4E00-\uFA29]|[\uE7C7-\uE7F3]|[A-Z]|[a-z]){2,10}$/;   
+	var r = /^((([\u4E00-\uFA29]|[\uE7C7-\uE7F3]){2,8})|[A-Za-z]{3,50})$/;   
 	if(r.test(n)){
 		rmv_err('name');
 		return true;
 	}else{
-		err('name',"Please fill in your name .It is better  to use your Chinese Name ！");
+		err('name',"Please fill in your name. It is better to use your Chinese Name ！");
 		return false;
 	}
 }
@@ -125,7 +125,7 @@ function checkgender(){
 function checkcollege(c){
 	if(isNull(c))
 	{
-		err('college','Please select your college,if your college is not in this form please select “Other College”, and note in comment！');
+		err('college','Please select your college, if your college is not in this form please select “Other College”, and note in comment！');
 		return false;
 	}else{
 		rmv_err('college');
@@ -136,7 +136,7 @@ function checkcollege(c){
 function checkgrade(g){
 	if(isNull(g))
 	{
-		err('grade','Please select your grade ! if you are not a student , please select " “Others",and Note in Comment！');
+		err('grade','Please select your grade! if you are not a student, please select " “Others",and Note in Comment！');
 		return false;
 	}else{
 		rmv_err('grade');
@@ -160,7 +160,7 @@ function checkemail(e) {
 		rmv_err('email');
 		return true;
 	}else{
-		err('email',"Please write your email address correctly!(we will tell you the progress and details via email. )");
+		err('email',"Please write your email address correctly! ( we will tell you the progress and details via email. )");
 		return false;
 	}
 }
@@ -173,7 +173,7 @@ function checkdept1(d){
 		var d2=document.getElementById('dept2');
 		var no=d2.options[0];
 		no.disabled=false;
-		no.text="不选择";
+		no.text="No";
 		no.value="无";
 		for (var i = d2.options.length - 1; i >= 1; i--) {
 			var o=d2.options[i];

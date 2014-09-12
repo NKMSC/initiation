@@ -1,16 +1,17 @@
 //for english
 e=document.getElementById("error");
+IC="blue";
 var s=document.getElementsByTagName('select');
 for (var i = 0; i < s.length; i++) {
 	s[i].style.background="#222";
 	s[i].style.color="#444";
+	s[i].style.size*=0.9;
 	s[i].onclick=function(){
-		// this.style.background="rgb(56,46,44,0.8)";
 		this.style.color="#58FE50";
 		o=this.options;
 		for (var i = o.length - 1; i >= 0; i--) {
 			if(!o[i].disabled){
-				o[i].style.color=o[i].selected?'#FFF':'green';
+				o[i].style.color=o[i].selected?IC:'green';
 
 			}else{
 				o[i].color="#444";
@@ -25,7 +26,7 @@ for (var i = 0; i < s.length; i++) {
 };
 
 function nc(s){
-	s.style.color="white";
+	s.style.color=IC;
 	s.style.background="#222";
 }
 
@@ -63,8 +64,8 @@ function select(s,v){
 		if(o[i].value==v)
 		{
 			o[i].selected=true;
-			o[i].style.color="#FFF";
-			s.style.color="#FFF";			
+			o[i].style.color=IC;
+			s.style.color=IC;			
 			return true;
 		}
 	}
@@ -72,7 +73,7 @@ function select(s,v){
 
 function checkid( id ){   
 	var r = /^[0-9]{4,}[x|x]?$/; 
-	if( r.test(id))
+	if( r.test(id)&& id!="1110664")
 	{
 		var auto=arguments[1]?arguments[1]:true;
 		if(auto){
@@ -179,7 +180,7 @@ function checkdept1(d){
 			var o=d2.options[i];
 			if(o.value==d){
 				o.disabled=true;
-				d2.style.color="#FFF";
+				d2.style.color=IC;
 			}else{
 				o.disabled=false;
 				o.selected=true;

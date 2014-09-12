@@ -1,7 +1,7 @@
 body {
 	/* Setting default text color, background and a font stack */
 	color: #eee;
-	background: repeat-x #222222;
+	background: #222222;
 	font-family: Arial, Helvetica, sans-serif;
 }
 main {
@@ -42,7 +42,7 @@ main, fieldset {
 	-webkit-border-radius: 12px;
 	border-radius: 12px;
 }
-fieldset *:not(legend):not(small):not(div) {
+html[lang="zh-CN"] fieldset *:not(legend):not(small):not(div) {
 	font-family: Century Gothic, Myriad Pro, Arial, Helvetica, sans-serif;
 	font-size: 1.5em;
 	word-spacing: 0.1em;
@@ -50,9 +50,18 @@ fieldset *:not(legend):not(small):not(div) {
 	margin-top: .2em;
 	text-indent: .2em;
 }
+html[lang="en"] fieldset *:not(legend):not(small):not(div) {
+	font-family: Century Gothic, Myriad Pro, Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	word-spacing: 0.1em;
+	padding-top:.1em ;
+	margin-top: .1em;
+	text-indent: .1em;
+}
+
 label {
 	width: 25%;
-	color: wheat;
+	color: azure,wheat;
 	min-width: 2.0em;
 	word-spacing: 0;
 	font-size: 0.9em;
@@ -76,7 +85,7 @@ input, select, textarea, #gender {
 }
 input, select, textarea{
 	border: 1px solid #444;
-	color: #FFF;
+	color: blue;
 	background: #222;
 }
 option[selected]{
@@ -102,7 +111,7 @@ textarea {
 legend {
 	font-family: serif, sans-serif, 微软雅黑, 宋体;
 	text-align: left;
-	font-size: 1.1em;
+	font-size: 1em;
 	color: #454745;
 }
 small {
@@ -110,14 +119,14 @@ small {
 	color: #404040;
 }
 small a, small a:visited {
-	font-size: 1.0em !important;
+	font-size: 0.92em !important;
 	color: #373830;
 }
 button {
 	/* The submit button container */
 	text-align: center;
 	margin-top: .5em;
-	font-size: 2.5em;
+	font-size: 2em;
 	border: 1px solid #444;
 	color: white;
 	background: #2b8bc7;
@@ -149,6 +158,21 @@ input[type="radio"]:active{
 }
 *:-ms-input-placeholder {
 	color:#444;
+}
+
+
+html[lang="en"] ::-moz-placeholder {
+	font-size: 0.8em;
+}
+html[lang="en"] ::-webkit-input-placeholder {
+	font-size: 0.8em;
+}
+html[lang="en"] :-ms-input-placeholder {
+	font-size: 0.8em;
+}
+
+html[lang="en"] select *;html[lang="en"] option{
+	font-size: 0.8em;
 }
 
 #error{

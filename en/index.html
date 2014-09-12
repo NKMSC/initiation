@@ -26,7 +26,7 @@
 				</div>
 				<div>
 					<label>Name</label>
-					<input id="name" name="name" type="text" onblur="checkname(this.value);"  placeholder="your name in Chinese" required/>
+					<input id="name" name="name" type="text" onblur="checkname(this.value);"  placeholder="Chinese name" required/>
 				</div>
 				<div>
 					<label>Gender</label>
@@ -40,7 +40,7 @@
 				<div>
 					<label>College</label>
 					<select id="college" name="college" onblur="nc(this); checkcollege(this.value);"  required>
-						<option value="" selected disabled>select your school/college</option>
+						<option value="" selected disabled>your school/college</option>
 						<option value="计控">College of Computer and Control Engineering</option>
 						<option value="软件">College of Software</option>
 						<option value="电光">College of Electonic Information and Optical Engineering</option>
@@ -68,7 +68,7 @@
 				<div>
 					<label>Grade</label>
 					<select id="grade" name="grade" onblur="nc(this); checkgrade(this.value);" required>
-						<option value="" selected disabled>Select your current status</option>
+						<option value="" selected disabled>your current status</option>
 						<option value="大一">Freshman( 1st year)</option>
 						<option value="大二">Sophomore( 2nd year)</option>
 						<option value="大三">Junior( 3rd year)</option>
@@ -90,11 +90,11 @@
 					</legend>
 					<div>
 						<label>Phone</label>
-						<input id="phone" name="phone" type="number" onblur="nc(this); checkphone(this.value);"  placeholder="your phone number in China" required/>
+						<input id="phone" name="phone" type="number" onblur="nc(this); checkphone(this.value);"  placeholder="phone number in China" required/>
 					</div>
 					<div>
 						<label>Email</label>
-						<input id="email" name="email" type="email" onblur="checkemail(this.value);" placeholder="email for receiving notification" required/>
+						<input id="email" name="email" type="email" onblur="checkemail(this.value);" placeholder="email address" required/>
 					</div>
 				</fieldset>
 				<fieldset>

@@ -1,5 +1,5 @@
 e=document.getElementById("error");
-
+IC="blue";//输入文本颜色
 e.innerHTML='<div id="e-test" class="error-tip" onclick="rmv_err(\'test\')" style="color:yellow;background: green;">注意:现在仅为是内部测试阶段,所有功能仅供内测使用,你填写的所有数据均会在正式纳新时删除，任何问题或建议均可以反馈到<a href="mailto:t@nkusmtc.cn">t@nkumstc.cn</a>。 感谢支持！</div>';
 
 var s=document.getElementsByTagName('select');
@@ -12,7 +12,7 @@ for (var i = 0; i < s.length; i++) {
 		o=this.options;
 		for (var i = o.length - 1; i >= 0; i--) {
 			if(!o[i].disabled){
-				o[i].style.color=o[i].selected?'#FFF':'green';
+				o[i].style.color=o[i].selected?IC:'green';
 
 			}else{
 				o[i].color="#444";
@@ -27,7 +27,7 @@ for (var i = 0; i < s.length; i++) {
 };
 
 function nc(s){
-	s.style.color="white";
+	s.style.color=IC;
 	s.style.background="#222";
 }
 
@@ -65,8 +65,8 @@ function select(s,v){
 		if(o[i].value==v)
 		{
 			o[i].selected=true;
-			o[i].style.color="#FFF";
-			s.style.color="#FFF";			
+			o[i].style.color=IC;
+			s.style.color=IC;			
 			return true;
 		}
 	}
@@ -181,7 +181,7 @@ function checkdept1(d){
 			var o=d2.options[i];
 			if(o.value==d){
 				o.disabled=true;
-				d2.style.color="#FFF";
+				d2.style.color=IC;
 			}else{
 				o.disabled=false;
 				o.selected=true;

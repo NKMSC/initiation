@@ -33,7 +33,7 @@ function nc(s){
 
 function err(id,msg){
 	var n=document.getElementById('e-'+id);
-	if(!n) e.innerHTML+='<div id="e-'+id+'" onclick="go(\''+id+'\');" class="error-tip">'+msg+'</div>';
+	if(!n) e.innerHTML+='<div id="e-'+id+'" onclick="go(\''+id+'\');" class="error-tip">'+msg+' [点击定位] '+'</div>';
 }
 
 function rmv_err(id){
@@ -74,7 +74,7 @@ function select(s,v){
 
 function checkid( id ){  
 	var r ; 
-	var auto=arguments[1]?arguments[1]:true;
+	var auto=arguments[1]===undefined?true:arguments[1];
 	var b;
 	var g=document.getElementById('grade');
 	switch (id.length)
@@ -209,11 +209,12 @@ function checkid( id ){
 		}
 	}
 	function checkdept1(d){
+		var auto=arguments[1]===undefined?true:arguments[1];
 		if(isNull(d))
 		{
 			err('dept1','请选择你希望加入的部门！(技术部会有笔试(^▽^))');
 			return false;
-		}else{
+		}else if(auto) {
 			var d2=document.getElementById('dept2');
 			var no=d2.options[0];
 			no.disabled=false;
@@ -229,9 +230,10 @@ function checkid( id ){
 					o.selected=true;
 				}
 			};
-			rmv_err('dept1');
-			return true;
+			
 		}
+		rmv_err('dept1');
+		return true;
 	}
 	function checkform(){
 		var isok=true;

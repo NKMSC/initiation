@@ -1,7 +1,5 @@
 e=document.getElementById("error");
 IC="blue";//输入文本颜色
-e.innerHTML='<div id="e-test" class="error-tip" onclick="rmv_err(\'test\')" style="color:yellow;background: green;">注意:现在仅为是内部测试阶段,所有功能仅供内测使用,你填写的所有数据均会在正式纳新时删除，任何问题或建议均可以反馈到<a href="mailto:t@nkusmtc.cn">t@nkumstc.cn</a>。 感谢支持！</div>';
-
 var s=document.getElementsByTagName('select');
 for (var i = 0; i < s.length; i++) {
 	s[i].style.background="#222";
@@ -71,7 +69,6 @@ function select(s,v){
 		}
 	}
 }
-
 function checkid( id ){  
 	var r ; 
 	var auto=arguments[1]===undefined?true:arguments[1];
@@ -128,7 +125,7 @@ function checkid( id ){
 			case 15:
 			r=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;break;
 			case 18:
-			r=/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+			r=/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X|x)$/;
 			break;
 			default:
 			err('id','请填写正确的学号！(学号我们仅作为核实身份用^_^)');
@@ -142,6 +139,7 @@ function checkid( id ){
 			return false;
 		}
 	}
+
 	function checkname( n ){
 		var r = /^([\u4E00-\uFA29]|[\uE7C7-\uE7F3]){2,10}$/;   
 		if(r.test(n)){
@@ -259,7 +257,7 @@ function checkid( id ){
 		isok&=checkemail(email);
 
 		var dept1=V('dept1');
-		isok&=checkdept1(dept1);
+		isok&=checkdept1(dept1,false);
 
 		return Boolean(isok);
 	};

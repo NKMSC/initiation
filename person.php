@@ -1,11 +1,9 @@
 <?php
 //定义一个常量，每页显示的条数
 	define("PAGESIZE",10);
-	define("PWD","nkumstc");//密码
-if(isset($_POST["pwd"])){
-		if($_POST["pwd"]==PWD)
-		setcookie('pwd',PWD,time()+10000);	
-}
+	if(!isset($_COOKIE["pwd"])){
+		header("location:login.php");
+	}
 ?>
 <html lang="zh-CN">
 <head>
@@ -38,11 +36,6 @@ if(isset($_POST["pwd"])){
 </head>
 <body>
 	<?php
-	
-	
-	if((!isset($_COOKIE["pwd"])&&!isset($_POST["pwd"]))||(isset($_COOKIE["pwd"])&&$_COOKIE["pwd"]!=PWD)||(isset($_POST["pwd"])&&$_POST["pwd"]!=PWD)){
-		echo "<form action=\"person.php\" method=\"post\"><label>请输入密码</label><input type=\"text\" name=\"pwd\"><input type=\"submit\" value=\"提交\">";
-	}else if($_POST['pwd']==PWD||$_COOKIE["pwd"]==PWD){
 		//输出整个table
 		echo "<h2>已经报名的人</h2>
 		<table id=\"table\" align=\"center\">
@@ -137,7 +130,6 @@ if(isset($_POST["pwd"])){
 						</tr>
 					</tfoot>
 					</table>";
-	}
 	?>
 </body>
 </html>

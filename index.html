@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=2.0,user-scalable=no" />
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=2.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>南微软纳新表</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
 		<h1>
 			2014年南开大学微软俱乐部纳新表
 		</h1>
-		<form action="http://nkumstcnew.sinaapp.com/new.php" onsubmit="return checkform();" method="post">
+		<form action="http://nkumstcnew.sinaapp.com/new.php" onsubmit="return checkform()" method="post">
 			<fieldset>
 				<legend>
 					个人信息
@@ -22,24 +22,22 @@
 				</legend>
 				<div>
 					<label>学号</label>
-					<input id="id" name="id" type="text" onblur="checkid(this.value);" placeholder="如1110664" required autofocus/>
-				</div>
+					<input id="id" name="id" type="text" onblur="checkid(this.value)" placeholder="如1110664" required autofocus></div>
 				<div>
 					<label>姓名</label>
-					<input id="name" name="name" type="text" onblur="checkname(this.value);"  placeholder="你的名字" required/>
-				</div>
+					<input id="name" name="name" type="text" onblur="checkname(this.value)" placeholder="你的名字" required></div>
 				<div>
 					<label>性别</label>
-					<div id="gender" onmouseout="checkgender();" >
-						<input type="radio" name="gender" value="M" checked/>
+					<div id="gender" onmouseout="checkgender()">
+						<input type="radio" name="gender" value="M" checked>
 						<span>男生</span>
-						<input type="radio" name="gender" value="F" required/>
+						<input type="radio" name="gender" value="F" required>
 						<span>女生</span>
 					</div>
 				</div>
 				<div>
 					<label>学院</label>
-					<select id="college" name="college" onblur="nc(this); checkcollege(this.value);"  required>
+					<select id="college" name="college" onblur="nc(this),checkcollege(this.value)" required>
 						<option value="" selected disabled>选择所在学院</option>
 						<option value="计控">计算机与控制工程</option>
 						<option value="软件">软件学院</option>
@@ -67,7 +65,7 @@
 				</div>
 				<div>
 					<label>年级</label>
-					<select id="grade" name="grade" onblur="nc(this); checkgrade(this.value);" required>
+					<select id="grade" name="grade" onblur="nc(this),checkgrade(this.value)" required>
 						<option value="" selected disabled>选择年级</option>
 						<option value="大一">大一</option>
 						<option value="大二">大二</option>
@@ -92,12 +90,10 @@
 				</legend>
 				<div>
 					<label>手机</label>
-					<input id="phone" name="phone" type="number" onblur="nc(this); checkphone(this.value);"  placeholder="接收短信的手机" required/>
-				</div>
+					<input id="phone" name="phone" type="number" onblur="nc(this),checkphone(this.value)" placeholder="接收短信的手机" required></div>
 				<div>
 					<label>邮箱</label>
-					<input id="email" name="email" type="email" onblur="checkemail(this.value);" placeholder="接收通知的邮箱" required/>
-				</div>
+					<input id="email" name="email" type="email" onblur="checkemail(this.value)" placeholder="接收通知的邮箱" required></div>
 			</fieldset>
 			<fieldset>
 				<legend>
@@ -110,7 +106,7 @@
 				</legend>
 				<div>
 					<label for="dept1">第一意愿</label>
-					<select id="dept1" name="dept1" onchange="checkdept1(this.value);" onblur="nc(this); checkdept1(this.value);"  required>
+					<select id="dept1" name="dept1" onchange="checkdept1(this.value)" onblur="nc(this),checkdept1(this.value)" required>
 						<option value="" selected disabled>最想去的部门</option>
 						<option value="技术部">技术部</option>
 						<option value="策宣部">策宣部</option>
@@ -119,7 +115,7 @@
 				</div>
 				<div>
 					<label for="dept2">第二意愿</label>
-					<select id="dept2" name="dept2"  onblur="nc(this); " >
+					<select id="dept2" name="dept2" onblur="nc(this)">
 						<option value="" selected disabled>备选部门</option>
 						<option value="技术部">技术部</option>
 						<option value="策宣部">策宣部</option>
@@ -137,7 +133,6 @@
 			<button id="submit" type="submit">确认提交</button>
 		</form>
 	</main>
-
 	<footer>
 		<ul>
 			<li>
@@ -166,5 +161,5 @@
 		</ul>
 	</footer>
 </body>
-<script type="text/javascript" src="js/form.js" defer></script>
+	<script type="text/javascript" src="js/form.js" defer></script>
 </html>

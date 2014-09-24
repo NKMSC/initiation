@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
 	<link rel="stylesheet" type="text/css" href="../css/style.css"/>
-	<title>Registration of NKU MSTC Initiation</title>
+	<title>Registration of NKU MSTC Initiation</title> 
 </head>
 <body>
 	<div id="error"></div>
@@ -40,43 +40,91 @@
 				<div>
 					<label>College</label>
 					<select id="college" name="college" onblur="nc(this); checkcollege(this.value);"  required>
-						<option value="" selected disabled>your school/college</option>
-						<option value="计控">Computer and Control Engineering</option>
+						<option value="" selected disabled>
+							your school/college
+						</option>
+						<option value="计控">
+							Computer and Control Engineering
+						</option>
 						<option value="软件">Software</option>
-						<option value="电光">Electonic Information and Optical Engineering</option>
-						<option value="数学">Mathematical Sciences</option>
+						<option value="电光">
+							Electonic Information and Optical Engineering
+						</option>
+						<option value="数学">
+							Mathematical Sciences
+						</option>
 						<option value="物理">Physics</option>
-						<option value="商学">Business School</option>
+						<option value="商学">
+							Business School
+						</option>
 						<option value="经济">Economics</option>
 						<option value="化学">Chemistry</option>
-						<option value="生科">Life Sciences</option>
-						<option value="环科">Environmental Science and Engineering</option>
+						<option value="生科">
+							Life Sciences
+						</option>
+						<option value="环科">
+							Environmental Science and Engineering
+						</option>
 						<option value="文学">Literature</option>
 						<option value="法学">Law School</option>
 						<option value="历史">History</option>
 						<option value="哲学">Philosophy</option>
-						<option value="医学">School of Medicine</option>
-						<option value="周政">Zhou Enlai School of Government</option>
-						<option value="马克思">Ideological and Cultural Education</option>
-						<option value="旅游">Tourism and Service Management</option>
-						<option value="外语">Foreign Languages</option>
-						<option value="汉语">Chinese Language and Culture</option>
-						<option value="泰达">TEDA College</option>
-						<option value="其它">Other Colleges</option>
+						<option value="医学">
+							School of Medicine
+						</option>
+						<option value="周政">
+							Zhou Enlai School of Government
+						</option>
+						<option value="马克思">
+							Ideological and Cultural Education
+						</option>
+						<option value="旅游">
+							Tourism and Service Management
+						</option>
+						<option value="外语">
+							Foreign Languages
+						</option>
+						<option value="汉语">
+							Chinese Language and Culture
+						</option>
+						<option value="泰达">
+							TEDA College
+						</option>
+						<option value="其它">
+							Other Colleges
+						</option>
 					</select>
 				</div>
 				<div>
 					<label>Grade</label>
 					<select id="grade" name="grade" onblur="nc(this); checkgrade(this.value);" required>
-						<option value="" selected disabled>your current status</option>
-						<option value="大一">Freshman( 1st year)</option>
-						<option value="大二">Sophomore( 2nd year)</option>
-						<option value="大三">Junior( 3rd year)</option>
-						<option value="大四">Senior( 4th year)</option>
-						<option value="研一">1st year Postgraduate</option>
-						<option value="研二">2nd year Postgraduate</option>
-						<option value="研三">3rd year Postgraduate</option>
-						<option value="博士">Doctorial student</option>
+						<option value="" selected disabled>
+							your current status
+						</option>
+						<option value="大一">
+							Freshman( 1st year)
+						</option>
+						<option value="大二">
+							Sophomore( 2nd year)
+						</option>
+						<option value="大三">
+							Junior( 3rd year)
+						</option>
+						<option value="大四">
+							Senior( 4th year)
+						</option>
+						<option value="研一">
+							1st year Postgraduate
+						</option>
+						<option value="研二">
+							2nd year Postgraduate
+						</option>
+						<option value="研三">
+							3rd year Postgraduate
+						</option>
+						<option value="博士">
+							Doctorial student
+						</option>
 						<option value="其他">Others</option>
 					</select>
 				</div>
@@ -86,83 +134,128 @@
 					Contact
 					<small>
 						( If you will Change your phonenumber, please note  in the comments ! If you are concerned about revealing personal information, please visit our
-						<a href="privacystatement. html">Privacy Statement</a>.)	</small>
-					</legend>
-					<div>
-						<label>Phone</label>
-						<input id="phone" name="phone" type="number" onblur="nc(this); checkphone(this.value);"  placeholder="phone number in China" required/>
-					</div>
-					<div>
-						<label>Email</label>
-						<input id="email" name="email" type="email" onblur="checkemail(this.value);" placeholder="email address" required/>
-					</div>
-				</fieldset>
-				<fieldset>
-					<legend>
-						Choice
-						<small>
-							( If you are not familiar with the Departments of NKU MSTC , you can visit <a href="http://department.nkumstc.cn">Departments of NKU MSTC</a>
-							to see the department introduction !)
-						</small>
-					</legend>
-					<div>
-						<label for="dept1">1st Choice</label>
-						<select id="dept1" name="dept1" onchange="checkdept1(this.value);" onblur="nc(this); checkdept1(this.value);"  required>
-							<option value="" selected disabled>First Department</option>
-							<option value="技术部">Technology Department</option>
-							<option value="策宣部">Public Relationship</option>
-							<option value="运营部">Operation Department</option>
-						</select>
-					</div>
-					<div>
-						<label for="dept2">2nd Choice</label>
-						<select id="dept2" name="dept2"  onblur="nc(this); " >
-							<option value="" selected disabled>Alternative Department</option>
-							<option value="技术部">Technology Department</option>
-							<option value="策宣部">Public Relationship</option>
-							<option value="运营部">Operation Department</option>
-						</select>
-					</div>
-				</fieldset>
-				<fieldset>
-					<legend>
-						Comments
-						<small>( If you have nothing to say , skip it ! )</small>
-					</legend>
-					<textarea id="info" name="info" placeholder="Write what you want to add"></textarea>
-				</fieldset>
-				<button id="submit" type="submit">Confirm and Submit</button>
-			</form>
-		</main>
-		<hr/>
-		<footer>
-			<ul>
-				<li>
-					Copyright&copy;2014
-					<a href="http://nkumstc.cn">NKU MSTC</a>
-				</li>
-				<li>Created by
-					<a>New Future</a> and <a>ZHANG ZhiQiang</a>
-				</li>
-				<li>
-					Supported by<a href="http://department.nkumstc.cn/technology.html">Technology Department</a>
-				</li>
-			</ul>
-			<ul>
-				<li>Translated by <a>New Future</a></li>
-				<li>Translation checked by <a>ZHANG ChunLu</a></li>
-				
-				<li>
-					<a href="../">
-						Chinese Edition( 中文版)
-					</a>
-				</li>
-				<li>
-					Visit
-					<a href="../privacystatement.html">Privacy Statement</a>
-				</li>
-			</ul>
-		</footer>
-	</body>
+						<a href="privacystatement. html">
+							Privacy Statement
+						</a>
+						.)
+					</small>
+				</legend>
+				<div>
+					<label>Phone</label>
+					<input id="phone" name="phone" type="number" onblur="nc(this); checkphone(this.value);"  placeholder="phone number in China" required/>
+				</div>
+				<div>
+					<label>Email</label>
+					<input id="email" name="email" type="email" onblur="checkemail(this.value);" placeholder="email address" required/>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>
+					Choice
+					<small>
+						( If you are not familiar with the Departments of NKU MSTC , you can visit
+						<a href="http://department.nkumstc.cn">
+							Departments of NKU MSTC
+						</a>
+						to see the department introduction !)
+					</small>
+				</legend>
+				<div>
+					<label for="dept1">1st Choice</label>
+					<select id="dept1" name="dept1" onchange="checkdept1(this.value);" onblur="nc(this); checkdept1(this.value);"  required>
+						<option value="" selected disabled>
+							First Department
+						</option>
+						<option value="技术部">
+							Technology Department
+						</option>
+						<option value="策宣部">
+							Public Relationship
+						</option>
+						<option value="运营部">
+							Operation Department
+						</option>
+					</select>
+				</div>
+				<div>
+					<label for="dept2">2nd Choice</label>
+					<select id="dept2" name="dept2"  onblur="nc(this); " >
+						<option value="" selected disabled>
+							Alternative Department
+						</option>
+						<option value="技术部">
+							Technology Department
+						</option>
+						<option value="策宣部">
+							Public Relationship
+						</option>
+						<option value="运营部">
+							Operation Department
+						</option>
+					</select>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>
+					Comments
+					<small>
+						( If you have nothing to say , skip it ! )
+					</small>
+				</legend>
+				<textarea id="info" name="info" placeholder="Write what you want to add"></textarea>
+			</fieldset>
+			<button id="submit" type="submit">
+				Confirm and Submit
+			</button>
+		</form>
+	</main>
+	<hr/>
+	<footer>
+		<ul>
+			<li>
+				Copyright&copy;2014
+				<a href="http://nkumstc.cn">NKU MSTC</a>
+			</li>
+			<li>
+				Created by
+				<a>New Future</a>
+				and
+				<a>
+					ZHANG ZhiQiang
+				</a>
+			</li>
+			<li>
+				Supported by
+				<a href="http://department.nkumstc.cn/technology.html">
+					Technology Department
+				</a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				Translated by
+				<a>New Future</a>
+			</li>
+			<li>
+				Translation checked by
+				<a>
+					ZHANG ChunLu
+				</a>
+			</li>
+
+			<li>
+				<a href="../">
+					Chinese Edition( 中文版)
+				</a>
+			</li>
+			<li>
+				Visit
+				<a href="../privacystatement.html">
+					Privacy Statement
+				</a>
+			</li>
+		</ul>
+	</footer>
+</body>
 	<script type="text/javascript" src="../js/en.js" defer></script>
-	</html>
+</html>
